@@ -1,0 +1,15 @@
+<div class="single song">
+	<h2><%= @song.title %></h2>
+	<h4><a href="/artists/<%= @song.artist.id %>"><%= @song.artist.name %></a></h4>
+	<img src="<%= @song.artwork %>" alt="">
+	<p><%= @song.album %></p>
+	<p>
+		<!-- controlls adds in the actual controls. Like the play/pause/volume etc…
+every thing on itunes has a preview url. Can get all the info on the song through there.
+ -->
+		<audio controls>
+			<source src="<%= @song.preview_url %>"></source>
+		</audio>
+	</p>
+</div>
+<a href="/songs/<%= @song.id %>/edit">Edit</a>
