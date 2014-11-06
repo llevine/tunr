@@ -12,6 +12,7 @@ get '/playlists/new' do
 end
 get '/playlists/:id' do 
   @playlist = Playlist.find(params[:id])
+  @songs = Song.all
   erb :'playlists/show'
 end
  
